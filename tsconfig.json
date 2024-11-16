@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "module": "Preserve",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": [
+      "vite-plugin-svgr/client",
+      "vite/client",
+    ],
+    "strictNullChecks": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Absolute paths */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+}
