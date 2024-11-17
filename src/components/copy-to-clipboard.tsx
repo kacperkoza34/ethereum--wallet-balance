@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import copy from 'copy-to-clipboard';
+import { t } from 'i18next';
 import { Button } from '@/components/button';
 
 interface CopyToClipboardProps {
@@ -30,7 +31,7 @@ export function CopyToClipboard({
         aria-label="Copy to clipboard"
         type="button"
       >
-        {isCopied ? 'Copied!' : 'Copy'}
+        {isCopied ? t('copyToClipboard.copied') : t('copyToClipboard.copy')}
       </Button>
     </div>
   );

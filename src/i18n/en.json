@@ -10,5 +10,9 @@
       "connectWalletLabel": "Connected Wallet",
       "disconnectWallet": "Disconnect"
     }
+  },
+  "copyToClipboard": {
+    "copy": "Copy",
+    "copied": "Copied!"
   }
 }
