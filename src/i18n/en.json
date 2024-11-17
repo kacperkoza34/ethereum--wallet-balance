@@ -27,5 +27,8 @@
   "copyToClipboard": {
     "copy": "Copy",
     "copied": "Copied!"
+  },
+  "input": {
+    "error:": "Invalid input"
   }
 }

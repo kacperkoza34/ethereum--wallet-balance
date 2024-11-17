@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import { Controller } from 'react-hook-form';
 
 interface InputProps {
@@ -25,7 +26,7 @@ export function Input({ label, name, placeholder, type }: InputProps) {
           />
           {fieldState.error ? (
             <div className="text-destructive">
-              {fieldState.error.message ?? 'Invalid input'}
+              {fieldState.error.message ?? t('input.error:')}
             </div>
           ) : null}
         </>
