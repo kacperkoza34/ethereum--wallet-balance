@@ -2,6 +2,7 @@ import type { RouteProps } from 'react-router-dom';
 import { ConnectWalletPage } from '@/pages/connect-wallet/connect-wallet.page';
 import { routerPaths } from '@/utils/router/router-paths';
 import { WalletStatePage } from '@/pages/wallet-state/wallet-state.page';
+import { TransferPage } from '@/pages/transfer/transfer.page';
 
 export const routes: RouteProps[] = [
   {
@@ -11,5 +12,9 @@ export const routes: RouteProps[] = [
   {
     path: routerPaths.walletStatePage,
     element: <WalletStatePage />,
+  },
+  {
+    path: routerPaths.transfer,
+    element: <TransferPage />,
   },
 ];

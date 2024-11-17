@@ -1,4 +1,5 @@
 import { t } from 'i18next';
+import { useNavigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/layout';
 import { Card } from '@/components/card';
 import { Popover } from '@/components/popover';
@@ -11,6 +12,8 @@ const BALANCE_MOCK = [{ symbol: 'eth', balance: 200 }];
 const MOCK_WALLET_ADDRESS = '0x73DAE75F3A3a1eFEB9B2e8901E16C89E7DcfC7BB';
 
 export function WalletStatePage() {
+  const navigate = useNavigate();
+
   const popoverContent = (
     <div className="w-[15rem] flex flex-col items-start justify-start gap-16">
       <div className="w-full flex flex-col items-start justify-start gap-2">
@@ -46,7 +49,14 @@ export function WalletStatePage() {
               <div>
                 {balance} {symbol.toLocaleUpperCase()}
               </div>
-              <Button size="small">Transfer</Button>
+              <Button
+                onClick={() => {
+                  navigate(`/transfer/${symbol}`);
+                }}
+                size="small"
+              >
+                Transfer
+              </Button>
             </div>
           ))}
         </div>
