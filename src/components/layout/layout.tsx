@@ -7,5 +7,16 @@ interface LayoutProps {
 }
 
 export function Layout({ children, className }: LayoutProps) {
-  return <div className={cn('container mx-auto', className)}>{children}</div>;
+  return (
+    <div
+      className={cn(
+        'h-screen w-full max-w-[40rem] m-auto font-roboto',
+        className
+      )}
+    >
+      <div className="h-full w-full flex justify-center items-start md:items-center">
+        <div className="h-full w-full md:max-h-[24rem]">{children}</div>
+      </div>
+    </div>
+  );
 }

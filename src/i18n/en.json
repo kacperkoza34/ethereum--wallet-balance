@@ -1,3 +1,6 @@
 {
-  "connectWalletPage": "Connect wallet"
+  "connectWalletPage": {
+    "title": "Your Ethereum Wallet Hub",
+    "button": "Connect to Metamask"
+  }
 }
