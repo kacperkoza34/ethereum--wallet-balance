@@ -4,9 +4,14 @@ import type { Children } from '@/utils/types';
 interface LayoutProps {
   children: Children;
   className?: string;
+  maxHeight?: string;
 }
 
-export function Layout({ children, className }: LayoutProps) {
+export function Layout({
+  children,
+  className,
+  maxHeight = '24rem',
+}: LayoutProps) {
   return (
     <div
       className={cn(
@@ -15,7 +20,9 @@ export function Layout({ children, className }: LayoutProps) {
       )}
     >
       <div className="h-full w-full flex justify-center items-start md:items-center">
-        <div className="h-full w-full md:max-h-[24rem]">{children}</div>
+        <div className="h-full w-full" style={{ maxHeight }}>
+          {children}
+        </div>
       </div>
     </div>
   );
