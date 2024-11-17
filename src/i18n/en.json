@@ -2,5 +2,17 @@
   "connectWalletPage": {
     "title": "Your Ethereum Wallet Hub",
     "button": "Connect to Metamask"
+  },
+  "walletStatePage": {
+    "title": "Your Wallet State",
+    "addressLabel": "Address",
+    "popover": {
+      "connectWalletLabel": "Connected Wallet",
+      "disconnectWallet": "Disconnect"
+    }
+  },
+  "copyToClipboard": {
+    "copy": "Copy",
+    "copied": "Copied!"
   }
 }
