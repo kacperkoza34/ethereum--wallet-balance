@@ -48,29 +48,33 @@ Ensure you have the following installed:
 - MetaMask browser extension
 
 ### Installation
+
 1. Clone the repository:
-   ```bash
+
+  ```bash
    git clone git@github.com:kacperkoza34/ethereum-wallet-balance.git
    cd ethereum-wallet-balance
    git checkout develop
   ```
 
 2. Install dependencies
-  ```
+
+  ```bash
   pnpm install
   ```
 
 3. Configure the environment:
-```
+
+```bash
 VITE_ERC_20_ADDRESS=0xYourTokenAddress
 ```
 
 4. Start the development server:
-```
+```bash
 pnpm run dev
 ```
 
-5. Open the app in your browser at http://http://localhost:5173.
+5. Open the app in your browser at http://localhost:5173.
 
 ### Scripts
 - pnpm run dev: Starts the development server.
