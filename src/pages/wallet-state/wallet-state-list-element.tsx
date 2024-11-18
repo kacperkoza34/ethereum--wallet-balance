@@ -4,8 +4,8 @@ import { Button } from '@/components/button';
 import { type TokeData } from '@/utils/store/services/contracts/contracts.slice';
 
 export function WalletStateListElement({
-  balance,
-  decimals,
+  balance = BigInt(0),
+  decimals = BigInt(18),
   symbol,
   tokenType,
 }: TokeData) {
@@ -14,8 +14,7 @@ export function WalletStateListElement({
   return (
     <div className="w-full flex items-center justify-between">
       <div>
-        {formatUnits(balance ?? '0', Number(decimals?.toString()))}{' '}
-        {symbol?.toLocaleUpperCase()}
+        {formatUnits(balance, decimals)} {symbol?.toLocaleUpperCase()}
       </div>
       <Button
         onClick={() => {

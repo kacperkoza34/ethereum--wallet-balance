@@ -24,6 +24,10 @@ function ERC20DataProvider() {
     return <CardLoader />;
   }
 
+  if (status.error) {
+    return <Navigate to="/transfer/eth" />;
+  }
+
   return <TransferForm {...data} />;
 }
 

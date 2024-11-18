@@ -16,14 +16,16 @@
     "balance": "Balance:",
     "transferBtn": "Transfer",
     "backToWallet": "Back to wallet",
-    "successTitle":"Successfully transferred funds!",
+    "successTitle": "Successfully transferred funds!",
+    "acceptTransfer": "Confirm action in wallet!",
     "validationErrors": {
       "notANumber": "Value is not a number",
       "notAPositiveNumber": "Value has to be greater that zero",
       "invalidDecimals": "Incorrect decimal expansion. Max {{decimals}} decimals",
       "invalidAddress": "Invalid address",
       "insufficientFunds": "Insufficient funds"
-    }
+    },
+    "transferError": "Something went wrong"
   },
   "copyToClipboard": {
     "copy": "Copy",
