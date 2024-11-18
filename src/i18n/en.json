@@ -16,6 +16,7 @@
     "balance": "Balance:",
     "transferBtn": "Transfer",
     "backToWallet": "Back to wallet",
+    "successTitle":"Successfully transferred funds!",
     "validationErrors": {
       "notANumber": "Value is not a number",
       "notAPositiveNumber": "Value has to be greater that zero",

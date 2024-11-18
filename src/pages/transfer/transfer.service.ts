@@ -57,7 +57,7 @@ export const getTransferSchema = (
   balanceInBaseUnit: bigint
 ) =>
   z.object({
-    receiver: z.string().refine(isValidEthereumAddress, {
+    recipient: z.string().refine(isValidEthereumAddress, {
       message: t('transferPage.validationErrors.invalidAddress'),
     }),
     amount: getTokenAmountSchema(decimals, balanceInBaseUnit),

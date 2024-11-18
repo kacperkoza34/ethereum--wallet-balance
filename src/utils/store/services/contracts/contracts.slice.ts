@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getErc20Data } from '@/utils/store/services/contracts/contracts.actions';
+import {
+  getErc20Data,
+  transferErc20Token,
+} from '@/utils/store/services/contracts/contracts.actions';
 
 type TokenType = { type: 'erc20'; address: string } | { type: 'eth' };
 
@@ -76,6 +79,18 @@ export const contractSlice = createSlice({
         state.erc20Data.status.loading = false;
         state.erc20Data.status.idle = false;
         state.erc20Data.status.success = false;
+      })
+      .addCase(transferErc20Token.pending, (state) => {
+        state.erc20Transfer.status.loading = true;
+      })
+      .addCase(transferErc20Token.fulfilled, (state) => {
+        state.erc20Transfer.status.success = true;
+        state.erc20Transfer.status.loading = false;
+      })
+      .addCase(transferErc20Token.rejected, (state) => {
+        state.erc20Transfer.status.error = true;
+        state.erc20Transfer.status.success = false;
+        state.erc20Transfer.status.loading = false;
       });
   },
 });

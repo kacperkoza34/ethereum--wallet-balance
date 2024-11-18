@@ -3,7 +3,10 @@ import {
   type TokeData,
   type Status,
 } from '@/utils/store/services/contracts/contracts.slice';
-import { getEthData } from '@/utils/store/services/eth/eth.actions';
+import {
+  getEthData,
+  transferEth,
+} from '@/utils/store/services/eth/eth.actions';
 
 interface EthState {
   ethData: {
@@ -59,6 +62,18 @@ export const ethSlice = createSlice({
         state.ethData.status.loading = false;
         state.ethData.status.idle = false;
         state.ethData.status.success = false;
+      })
+      .addCase(transferEth.pending, (state) => {
+        state.ethTransfer.status.loading = true;
+      })
+      .addCase(transferEth.fulfilled, (state) => {
+        state.ethTransfer.status.success = true;
+        state.ethTransfer.status.loading = false;
+      })
+      .addCase(transferEth.rejected, (state) => {
+        state.ethTransfer.status.error = true;
+        state.ethTransfer.status.success = false;
+        state.ethTransfer.status.loading = false;
       });
   },
 });
