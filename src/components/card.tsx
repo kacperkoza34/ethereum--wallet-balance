@@ -10,7 +10,7 @@ export function Card({ children, className }: CardProps) {
   return (
     <div
       className={cn(
-        'w-full h-full p-6 shadow-md rounded-xl md:border-border md:border-2',
+        'w-full h-full p-6 md:shadow-md rounded-xl md:border-border md:border-2',
         className
       )}
     >

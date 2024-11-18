@@ -11,9 +11,10 @@ import { connectWallet } from '@/utils/store/services/wallet/wallet.actions';
 export function ConnectWalletPage() {
   const isConnected = useAppSelector(({ wallet }) => wallet.isConnected);
   const isConnecting = useAppSelector(({ wallet }) => wallet.isConnecting);
+  const isDisconnected = useAppSelector(({ wallet }) => wallet.isDisconnected);
   const dispatch: AppDispatch = useDispatch();
 
-  if (isConnected) {
+  if (isConnected && !isDisconnected) {
     return <Navigate to={routerPaths.walletStatePage} />;
   }
 
