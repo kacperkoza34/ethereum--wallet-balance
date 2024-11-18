@@ -1,7 +1,8 @@
 {
   "connectWalletPage": {
     "title": "Your Ethereum Wallet Hub",
-    "button": "Connect to Metamask"
+    "button": "Connect to Metamask",
+    "installMetamask": "Install Metamask"
   },
   "walletStatePage": {
     "title": "Your Wallet State",
@@ -17,7 +18,7 @@
     "transferBtn": "Transfer",
     "backToWallet": "Back to wallet",
     "acceptTransfer": "Confirm action in wallet!",
-    "successTitle":"Successfully transferred funds!",
+    "successTitle": "Successfully transferred funds!",
     "validationErrors": {
       "notANumber": "Value is not a number",
       "notAPositiveNumber": "Value has to be greater that zero",

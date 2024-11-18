@@ -12,6 +12,8 @@ export function ConnectWalletPage() {
   const isConnected = useAppSelector(({ wallet }) => wallet.isConnected);
   const isConnecting = useAppSelector(({ wallet }) => wallet.isConnecting);
   const isDisconnected = useAppSelector(({ wallet }) => wallet.isDisconnected);
+  const noMetamask = useAppSelector(({ wallet }) => wallet.noMetamask);
+
   const dispatch: AppDispatch = useDispatch();
 
   if (isConnected && !isDisconnected) {
@@ -28,9 +30,13 @@ export function ConnectWalletPage() {
         <div className="text-lg font-roboto">
           {t('connectWalletPage.title')}
         </div>
-        <Button onClick={handleConnectClick} disabled={isConnecting}>
-          {t('connectWalletPage.button')}
-        </Button>
+        {noMetamask ? (
+          <div>{t('connectWalletPage.installMetamask')}</div>
+        ) : (
+          <Button onClick={handleConnectClick} disabled={isConnecting}>
+            {t('connectWalletPage.button')}
+          </Button>
+        )}
       </Card>
     </Layout>
   );
