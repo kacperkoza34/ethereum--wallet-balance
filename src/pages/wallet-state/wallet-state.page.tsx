@@ -46,7 +46,7 @@ export function WalletStatePage() {
     </div>
   );
 
-  if (erc20.status.loading || !erc20.status.success) {
+  if (erc20.status.loading || eth.status.loading) {
     return <CardLoader />;
   }
 
@@ -65,7 +65,9 @@ export function WalletStatePage() {
         </div>
         <div className="w-full flex flex-col items-start justify-start gap-4 max-h-40 overflow-y-auto">
           <WalletStateListElement {...eth.data} />
-          <WalletStateListElement {...erc20.data} />
+          {erc20.status.success ? (
+            <WalletStateListElement {...erc20.data} />
+          ) : null}
         </div>
       </Card>
     </Layout>

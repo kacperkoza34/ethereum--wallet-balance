@@ -116,6 +116,11 @@ export function TransferForm({
             </Button>
           </form>
         </FormProvider>
+        {transferStatus.error ? (
+          <div className="text-destructive">
+            {t('transferPage.transferError')}
+          </div>
+        ) : null}
       </Card>
     </Layout>
   );

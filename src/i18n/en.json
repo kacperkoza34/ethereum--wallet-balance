@@ -16,6 +16,7 @@
     "balance": "Balance:",
     "transferBtn": "Transfer",
     "backToWallet": "Back to wallet",
+    "acceptTransfer": "Confirm action in wallet!",
     "successTitle":"Successfully transferred funds!",
     "validationErrors": {
       "notANumber": "Value is not a number",
@@ -23,7 +24,8 @@
       "invalidDecimals": "Incorrect decimal expansion. Max {{decimals}} decimals",
       "invalidAddress": "Invalid address",
       "insufficientFunds": "Insufficient funds"
-    }
+    },
+    "transferError": "Something went wrong"
   },
   "copyToClipboard": {
     "copy": "Copy",
