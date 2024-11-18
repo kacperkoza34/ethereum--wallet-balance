@@ -38,8 +38,14 @@ export const attachWallet = createAsyncThunk<
   { state: RootState }
 >(ATTACH_WALLET_ACTION_NAME, async (_, { getState }) => {
   const state = getState();
+  const disconnect = localStorage.getItem('disconnected');
 
-  if (state.wallet.noMetamask || !config.provider) {
+  if (
+    disconnect === 'true' ||
+    state.wallet.noMetamask ||
+    !config.provider ||
+    state.wallet.isDisconnected
+  ) {
     return null;
   }
 
@@ -51,6 +57,8 @@ export const attachWallet = createAsyncThunk<
   config.signer = await config.provider.getSigner();
 
   const network = await config.provider.getNetwork();
+
+  localStorage.setItem('disconnected', 'false');
 
   return {
     address: accounts[0].address,
@@ -80,9 +88,19 @@ export const connectWallet = createAsyncThunk<
   }
 
   const network = await config.provider.getNetwork();
+  localStorage.setItem('disconnected', 'false');
 
   return {
     address: accounts[0].address,
     chainId: network.chainId,
   };
 });
+
+export const DISCONNECT_WALLET_ACTION_NAME = 'wallet/disconnectWallet';
+
+export const disconnectWallet = createAsyncThunk(
+  DISCONNECT_WALLET_ACTION_NAME,
+  () => {
+    localStorage.setItem('disconnected', 'true');
+  }
+);

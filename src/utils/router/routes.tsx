@@ -3,18 +3,31 @@ import { ConnectWalletPage } from '@/pages/connect-wallet/connect-wallet.page';
 import { routerPaths } from '@/utils/router/router-paths';
 import { WalletStatePage } from '@/pages/wallet-state/wallet-state.page';
 import { TransferPage } from '@/pages/transfer/transfer.page';
+import { AttachWalletProvider } from '@/utils/providers/attach-wallet-provider';
 
 export const routes: RouteProps[] = [
   {
     path: routerPaths.homePage,
-    element: <ConnectWalletPage />,
+    element: (
+      <AttachWalletProvider>
+        <ConnectWalletPage />
+      </AttachWalletProvider>
+    ),
   },
   {
     path: routerPaths.walletStatePage,
-    element: <WalletStatePage />,
+    element: (
+      <AttachWalletProvider>
+        <WalletStatePage />
+      </AttachWalletProvider>
+    ),
   },
   {
     path: routerPaths.transfer,
-    element: <TransferPage />,
+    element: (
+      <AttachWalletProvider>
+        <TransferPage />
+      </AttachWalletProvider>
+    ),
   },
 ];
