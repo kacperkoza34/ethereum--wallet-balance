@@ -81,7 +81,7 @@ export function TransferForm({
   }
 
   if (transferStatus.loading) {
-    return <CardLoader title={t('transferPage.acceptTransfer')} />;
+    return <CardLoader />;
   }
 
   return (
