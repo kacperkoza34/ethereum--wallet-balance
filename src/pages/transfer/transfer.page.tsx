@@ -20,12 +20,12 @@ function ERC20DataProvider() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- call only once
   }, []);
 
-  if (status.loading || !status.success) {
-    return <CardLoader />;
-  }
-
   if (status.error) {
     return <Navigate to="/transfer/eth" />;
+  }
+
+  if (status.loading || !status.success) {
+    return <CardLoader />;
   }
 
   return <TransferForm {...data} />;
